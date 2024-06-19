@@ -21,7 +21,7 @@ echo "
 	 MMMMMMMMMMMMM                            MMMMMM
 	 MMMMMMMMMMMMM                             MMMMM
 	 MMMMMMMMMMMMM
-      MMMMMMMMMMMM
+          MMMMMMMMMMMM
 	      MMMMMMMM
 
 
