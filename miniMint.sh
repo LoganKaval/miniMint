@@ -19,8 +19,11 @@ echo "
 	 MMMMMMMMMMMMM                            MMMMMM
 	 MMMMMMMMMMMMM                            MMMMMM
 	 MMMMMMMMMMMMM                            MMMMMM
+	 MMMMMMMMMMMMM                             MMMMM
 	 MMMMMMMMMMMMM
-	 MMMMMMMMMMMMM
+      MMMMMMMMMMMM
+	      MMMMMMMM
+
 
 "
 
@@ -41,7 +44,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 
-# Main Part
+# Remove Paks
 echo "Would You Like To Start??? Data Loss Is Possible... (y/N)"
 read=risk
 
@@ -58,10 +61,37 @@ else
 
 fi
 
+# Add Paks
 
 apt install network-manager -y
 apt install vim -y
 apt install git -y
+
+
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+
+# Remove Files
+
+
+echo "Do You Want to Remove a Couple of Unnessisary Files? (y/N)"
+read=files
+
+if [ $files = "y" ];
+then
+    echo "Time to Have Some Fun..."
+	rm /etc/os-release
+	echo 'NAME="miniMint"' >> /etc/os-release
+	echo 'PRETTY_NAME="miniMint"' >> /etc/os-release
+	echo 'ID=miniMint' >> /etc/os-release
+	
+else 
+    echo "Your No Fun..."
+	exit
+fi
 
 
 exit
