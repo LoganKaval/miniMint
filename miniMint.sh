@@ -27,7 +27,7 @@ echo "
 echo "Welcome To miniMint!"
 echo "Warning: This Will Uninstall Packages!!!"
 echo "Make Sure No Important Data Is Kept On This Installation"
-echo "The miniMint Contributers Do Not Take Responsibility For Any Data That Is Lost"
+echo "The miniMint Contributors Do Not Take Responsibility For Any Data That Is Lost"
 
 sleep 7
 
@@ -62,5 +62,6 @@ fi
 apt install network-manager -y
 apt install vim -y
 apt install git -y
+
 
 exit
