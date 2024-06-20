@@ -46,7 +46,8 @@ fi
 
 # Remove Paks
 echo "Would You Like To Start??? Data Loss Is Possible... (y/N)"
-read=risk
+read risk
+
 
 sleep 5
 
@@ -78,13 +79,13 @@ echo ""
 
 
 echo "Do You Want to Remove a Couple of Unnessisary Files? (y/N)"
-read=files
+read files
 
 if [ $files = "y" ];
 then
     echo "Time to Have Some Fun..."
 	rm /etc/os-release
-	echo 'NAME="miniMint"' >> /etc/os-release
+	echo 'NAME="miniMint"' > /etc/os-release
 	echo 'PRETTY_NAME="miniMint"' >> /etc/os-release
 	echo 'ID=miniMint' >> /etc/os-release
 	
@@ -94,4 +95,15 @@ else
 fi
 
 
+# Reinstalling Grub
+
+echo "What Device Do You Want GRUB On? Make Sure to Say '/dev/sdx'"
+lsblk
+read part
+apt-get install grub -y
+grub-install $part
+grub-mkconfig -o /boot/grub/grub.cfg
+update-grub
+
+echo "Finished: miniMint"
 exit
