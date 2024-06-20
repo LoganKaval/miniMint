@@ -48,6 +48,7 @@ fi
 echo "Would You Like To Start??? Data Loss Is Possible... (y/N)"
 read risk
 
+
 sleep 5
 
 if [ $risk = "y" ];
@@ -96,9 +97,12 @@ fi
 
 # Reinstalling Grub
 
+echo "What Device Do You Want GRUB On? Make Sure to Say '/dev/sdx'"
+read part
 apt-get install grub -y
-grub-install 
+grub-install $part
+grub-mkconfig -o /boot/grub/grub.cfg
 update-grub
 
-
+echo "Finished: miniMint"
 exit
