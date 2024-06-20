@@ -103,7 +103,9 @@ read part
 apt-get install grub -y
 grub-install $part
 grub-mkconfig -o /boot/grub/grub.cfg
+grub-install
 update-grub
+grub-install
 
 echo "Finished: miniMint"
 exit
