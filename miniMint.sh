@@ -98,6 +98,7 @@ fi
 # Reinstalling Grub
 
 echo "What Device Do You Want GRUB On? Make Sure to Say '/dev/sdx'"
+lsblk
 read part
 apt-get install grub -y
 grub-install $part
